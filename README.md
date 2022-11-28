@@ -76,6 +76,11 @@ $$
 T_{ideal}(N,10X) = 10T(N,X)
 $$
 
+<div align="center">
+<img src="output/plot_strong_time.png">
+</div>
+図の系列名は2つ目の行列Bの大きさを表しています．例えばrand_100_10は行列Bの大きさが 100×10 の場合を示しています．1つめの行列Aの大きさは1000×100で固定しています．
+
 #### 速度向上率
 並列数を1から $N$ に変えた場合にどれだけ実行速度が向上したかを評価するために用います．速度向上率 $S$ は以下の式で求めます．  
 
@@ -90,6 +95,10 @@ $$
 S_{ideal}(N,X) = \frac{T(1,X)}{T_{ideal}(N,X)} = \frac{T(1,X)}{\frac{T(1,X)}{N}} = N
 $$
 
+<div align="center">
+<img src="output/plot_strong_speed.png">
+</div>
+
 #### 並列化効率
 速度向上率をそれぞれの並列数 $N$ で除算することにより値域を $0 \sim 1$ とでき，これを並列化効率と呼びます．  
 
@@ -99,6 +108,9 @@ $$
 
 理想的には並列化効率は1となります．
 
+<div align="center">
+<img src="output/plot_strong_effi.png">
+</div>
 
 
 ### ウィークスケーリング
@@ -125,6 +137,12 @@ $$
 T_{ideal}(N,X_N) = T(1,X_1)
 $$
 
+<div align="center">
+<img src="output/plot_weak_time.png">
+</div>
+図の系列名は2つ目の行列Bの大きさを表しています．例えばrand_100_10は行列Bの大きさが 100×10 の場合を示しています．
+1つめの行列Aの大きさは並列数によって100×100，200×100，400×100・・・のように変化します．
+
 #### 並列化効率
 ウィークスケーリングでは実行時間の比をとると並列化効率が求まります．
 
@@ -138,3 +156,7 @@ $$
 E_{ideal}(N,X) = \frac{T(1,X_1)}{T_{ideal}(N,X_N)} = \frac{T(1,X_1)}{T(1,X_1)} = 1
 $$
 
+
+<div align="center">
+<img src="output/plot_weak_effi.png">
+</div>
